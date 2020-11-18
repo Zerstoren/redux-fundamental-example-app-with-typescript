@@ -10,9 +10,9 @@ import {
 } from '../todos/types';
 
 import {
-  completeTodo,
-  removeTodo,
-  editColor,
+  toggled,
+  changeColor,
+  remove,
 } from '../todos/todoSlice';
 
 import {IRootStore} from '../../store';
@@ -40,9 +40,9 @@ export default function TodoListItem(props: {id: number}) {
 
   const {text, completed, color} = todo;
   
-  const handleCompleteChange = (e: React.ChangeEvent<HTMLInputElement>) => dispatch(completeTodo(todo));
-  const handleColorChanged = (e: React.ChangeEvent<HTMLSelectElement> & { target: HTMLSelectElement }) => dispatch(editColor(todo, e.target.value));
-  const handleDelete = () => dispatch(removeTodo(todo));
+  const handleCompleteChange = (e: React.ChangeEvent<HTMLInputElement>) => dispatch(toggled(todo));
+  const handleColorChanged = (e: React.ChangeEvent<HTMLSelectElement> & { target: HTMLSelectElement }) => dispatch(changeColor(todo, e.target.value));
+  const handleDelete = () => dispatch(remove(todo));
   
   return (
     <li>

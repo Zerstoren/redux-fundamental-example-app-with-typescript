@@ -1,8 +1,10 @@
 import {ThunkDispatch} from 'redux-thunk';
+import {EntityId} from '@reduxjs/toolkit';
 
 interface ITodoState {
+  ids: Array<EntityId>,
   entities: ITodosList,
-  status: TodosLoadingStatus,
+  // status: TodosLoadingStatus,
   isLoading: boolean
 }
 
@@ -15,6 +17,11 @@ interface ITodoItem {
   text: string,
   completed: boolean,
   color?: string
+}
+
+interface IPayloadChangeColor {
+  todoId: number,
+  color: string,
 }
 
 interface IActionTodosReducer {
@@ -94,6 +101,9 @@ export type {
   IActionTodoChangeColorReducer,
   IActionTodoRemoveReducer,
   IActionTodoLoadingReducer,
+
+
+  IPayloadChangeColor
 }
 
 export {

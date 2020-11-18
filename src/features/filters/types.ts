@@ -10,8 +10,6 @@ export interface IPayloadChangeColor {
   changeType: ChangeFilterColorAction
 }
 
-export type IPayloadChangeStatus = StatusFilter;
-
 export interface IActionColorFilterChangeColor {
   color: string,
   changeType: ChangeFilterColorAction

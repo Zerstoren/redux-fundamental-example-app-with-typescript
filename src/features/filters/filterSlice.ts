@@ -5,8 +5,7 @@ import {
   ChangeFilterColorAction,
   StatusFilter,
 
-  IPayloadChangeColor,
-  IPayloadChangeStatus
+  IPayloadChangeColor
 } from './types';
 
 const initialState: IFilter = {
@@ -18,7 +17,7 @@ const filtersSlicer = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    statusChange: (state, action: PayloadAction<IPayloadChangeStatus>) => {
+    statusChange: (state, action: PayloadAction<StatusFilter>) => {
       state.status = action.payload;
     },
     

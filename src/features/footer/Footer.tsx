@@ -16,8 +16,8 @@ import {
 } from '../filters/filterSlice';
 
 import {
-  completeAllTodos,
-  removeCompletedTodos,
+  removeCompleted,
+  completeAll
 } from '../todos/todoSlice';
 
 import {ITodoItem} from '../todos/types';
@@ -98,8 +98,8 @@ export default function Footer () {
 
   const onColorChange = (color: string, changeType: ChangeFilterColorAction) => dispatch(colorFilterChange({color, changeType}));
   const onStatusChange = (status: StatusFilter) => dispatch(statusChange(status));
-  const onMarkAllCompleted = () => dispatch(completeAllTodos());
-  const onClearCompleted = () => dispatch(removeCompletedTodos());
+  const onMarkAllCompleted = () => dispatch(completeAll());
+  const onClearCompleted = () => dispatch(removeCompleted());
 
   return (
     <footer className="footer">
